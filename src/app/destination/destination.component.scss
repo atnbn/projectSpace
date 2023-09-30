@@ -1,0 +1,94 @@
+section {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.section__below {
+    margin-top: 200px;
+    margin-left: 350px;
+    width: calc(100% - 250px);
+    display: flex;
+}
+.left__side {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+h3 {
+    font-size: 28px;
+    font-family: Barlow;
+    letter-spacing: 4.72px;
+    font-weight: 400;
+}
+
+.celestail__img {
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.right__side {
+    margin-top: 150px;
+    margin-left: 250px;
+    width: 444px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+    font-family: Barlow;
+    font-size: 16px;
+    letter-spacing: 2.7px;
+}
+h1 {
+    font-size: 100px;
+    font-weight: 400;
+    font-family: Bellefair;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 0;
+}
+
+.distance__con {
+    display: flex;
+    gap: 90px;
+    h4 {
+        font-size: 14px;
+        font-family: Barlow;
+        letter-spacing: 2.36px;
+    }
+    span {
+        font-size: 28px;
+        font-family: Bellefair;
+        line-height: auto;
+    }
+}
+
+.description {
+    font-size: 18px;
+    font-family: Barlow;
+    line-height: 32px;
+    color: #d0d6f9;
+}
+
+hr {
+    border: 1px solid #383b4b;
+    margin-top: 50px;
+}

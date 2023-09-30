@@ -1,12 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --dark: #0b0d17;
+    --middle: #d0d6f9;
+    --light: #ffff;
+    --header_height: 94px;
+}
+
 body {
     margin: 0;
     height: 100%;
     width: 100%;
-    font-family: "cyanRegular";
 }
 
+// For Button Explore
 @font-face {
     font-family: "cyanRegular";
     src: url("assets/fonts/Cyan Regular.ttf");
+}
+
+// Heading 1- Bellefair Regular -150px for Heading 1 to 4
+
+@font-face {
+    font-family: Bellefair;
+    src: url("assets/fonts/Bellefair-Regular.ttf");
+}
+
+@font-face {
+    font-family: Barlow;
+    src: url("assets/fonts/BarlowCondensed-Regular.ttf");
 }
