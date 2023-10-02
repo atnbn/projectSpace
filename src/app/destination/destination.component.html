@@ -8,36 +8,42 @@
     "
     class="background"
   />
-  <div class="section__below">
+  <div class="section__below" *ngIf="selectedObject">
     <div class="left__side">
-      <h3>01 PICK YOUR DESTINATION</h3>
-      <img class="celestail__img" src="assets/destination/image-moon.png" />
+      <h3><b style="color: gray">01 </b>PICK YOUR DESTINATION</h3>
+      <img
+        class="celestail__img"
+        [src]="selectedObject.img"
+        (animationend)="onAnimationEnd()"
+        [ngClass]="{ animation: animate }"
+      />
     </div>
     <div class="right__side">
       <nav class="destination__nav">
-        <a>MOON</a>
-        <a>MARS</a>
-        <a>EUROPA</a>
-        <a>TITAN</a>
+        <a
+          *ngFor="let object of objects"
+          (click)="setObject(object)"
+          class="link"
+          [ngClass]="{ active: object === selectedObject }"
+        >
+          <div class="space__con">
+            <span>{{ object.name }}</span>
+          </div></a
+        >
       </nav>
-      <!-- modify -->
-      <h1>MOON</h1>
+      <h1>{{ selectedObject.name }}</h1>
       <span class="description">
-        See our planet as you’ve never seen it before. A perfect relaxing trip
-        away to help regain perspective and come back refreshed. While you’re
-        there, take in some history by visiting the Luna 2 and Apollo 11 landing
-        sites.
+        {{ selectedObject.description }}
       </span>
       <hr />
       <div class="distance__con">
         <div class="distance__left__side">
           <h4>AVG. DISTANCE</h4>
-          <span>384,400 KM</span>
+          <span> {{ selectedObject.travelDistance }}</span>
         </div>
         <div class="distance__right__side">
           <h4>EST. TRAVEL TIME</h4>
-          <span>3 DAYS</span>
-          <!--  -->
+          <span>{{ selectedObject.travelTime }}</span>
         </div>
       </div>
     </div>
