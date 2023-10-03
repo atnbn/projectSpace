@@ -29,6 +29,44 @@
   </nav>
 
   <nav class="responsiv__nav">
-    <img src="/assets/shared/icon-hamburger.svg" />
+    <img
+      (click)="open()"
+      class="responsiv-img"
+      src="/assets/shared/icon-hamburger.svg"
+    />
   </nav>
+
+  <div class="responsiv__con" [ngClass]="{ active: openDropDown }">
+    <img
+      class="close-img"
+      (click)="close()"
+      src="/assets/shared/icon-close.svg"
+    />
+    <nav>
+      <a class="link" [routerLink]="'home'" (click)="close()">
+        <div class="space__con">
+          <b>00</b>
+          <span>HOME</span>
+        </div>
+      </a>
+      <a class="link" [routerLink]="'destination'" (click)="close()">
+        <div class="space__con">
+          <b>01</b>
+          <span>DESTINATION</span>
+        </div>
+      </a>
+      <a class="link" [routerLink]="'crew'" (click)="close()">
+        <div class="space__con">
+          <b>02</b>
+          <span>CREW</span>
+        </div>
+      </a>
+      <a class="link" [routerLink]="'technology'" (click)="close()">
+        <div class="space__con">
+          <b>03</b>
+          <span>TECHNOLOGY</span>
+        </div>
+      </a>
+    </nav>
+  </div>
 </header>

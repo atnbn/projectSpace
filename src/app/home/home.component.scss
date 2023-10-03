@@ -18,7 +18,7 @@ section {
 }
 
 .text__con {
-    z-index: 1;
+    z-index: 0;
 
     color: #ffff;
     width: 450px;
@@ -93,8 +93,6 @@ section {
 }
 
 @media (max-width: 900px) {
-    section {
-    }
     .section__below {
         margin-top: 90px;
         bottom: 0;
@@ -115,12 +113,13 @@ section {
 @media (max-width: 600px) {
     .section__below {
         width: 90%;
-        margin-top: 0px;
+        margin-top: 40px;
     }
     .text__con {
         width: 100%;
         h1 {
             font-size: 100px;
+            margin: 0;
         }
 
         span {
