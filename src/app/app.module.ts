@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { DestinationComponent } from './destination/destination.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CrewComponent } from './crew/crew.component';
+import { TechnologyComponent } from './technology/technology.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { CrewComponent } from './crew/crew.component';
     HeaderComponent,
     DestinationComponent,
     CrewComponent,
+    TechnologyComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

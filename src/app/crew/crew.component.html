@@ -1,1 +1,80 @@
-<p>crew works!</p>
+<section>
+  <img
+    src="/assets/crew/background-crew-desktop.jpg"
+    srcset="
+      /assets/crew/background-crew-desktop.jpg,
+      /assets/crew/background-crew-mobile.jpg  320w,
+      /assets/crew/background-crew-tablet.jpg  900w
+    "
+    class="background"
+  />
+  <h3 class="responsiv absolute">
+    <b style="color: gray">02 </b>MEET YOUR CREW
+  </h3>
+  <div class="section__below" *ngIf="selectedCrewMember">
+    <div class="left__side">
+      <h3 class="title"><b style="color: gray">02 </b>MEET YOUR CREW</h3>
+      <div class="dot__con responsiv">
+        <span
+          class="dot"
+          [ngClass]="{ active: selectedCrewMember === crew[0] }"
+          (click)="setCrewMember(crew[0])"
+        ></span>
+        <span
+          class="dot"
+          [ngClass]="{ active: selectedCrewMember === crew[1] }"
+          (click)="setCrewMember(crew[1])"
+        ></span>
+        <span
+          class="dot"
+          [ngClass]="{ active: selectedCrewMember === crew[2] }"
+          (click)="setCrewMember(crew[2])"
+        ></span>
+        <span
+          class="dot"
+          [ngClass]="{ active: selectedCrewMember === crew[3] }"
+          (click)="setCrewMember(crew[3])"
+        ></span>
+      </div>
+      <h2
+        [ngClass]="{ animation: animate }"
+        (animationend)="onAnimationEnd()"
+        class="job__title"
+      >
+        {{ selectedCrewMember.job }}
+      </h2>
+      <h3 [ngClass]="{ animation: animate }" class="name">
+        {{ selectedCrewMember.name }}
+      </h3>
+      <span [ngClass]="{ animation: animate }" class="description">
+        {{ selectedCrewMember.description }}
+      </span>
+      <div class="dot__con">
+        <span
+          class="dot"
+          [ngClass]="{ active: selectedCrewMember === crew[0] }"
+          (click)="setCrewMember(crew[0])"
+        ></span>
+        <span
+          class="dot"
+          [ngClass]="{ active: selectedCrewMember === crew[1] }"
+          (click)="setCrewMember(crew[1])"
+        ></span>
+        <span
+          class="dot"
+          [ngClass]="{ active: selectedCrewMember === crew[2] }"
+          (click)="setCrewMember(crew[2])"
+        ></span>
+        <span
+          class="dot"
+          [ngClass]="{ active: selectedCrewMember === crew[3] }"
+          (click)="setCrewMember(crew[3])"
+        ></span>
+      </div>
+    </div>
+    <div class="right__side">
+      <img [ngClass]="{ animation: animate }" [src]="selectedCrewMember.img" />
+      <hr />
+    </div>
+  </div>
+</section>

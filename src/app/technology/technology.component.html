@@ -1,0 +1,48 @@
+<section *ngIf="currentTech">
+  <img
+    src="/assets/technology/background-technology-desktop.jpg"
+    srcset="
+      /assets/technology/background-technology-desktop.jpg,
+      /assets/technology/background-technology-mobile.jpg  320w,
+      /assets/technology/background-technology-tablet.jpg  900w
+    "
+    class="background"
+  />
+  <div class="section__below">
+    <div class="left">
+      <h3 class="title"><b style="color: gray">03 </b> SPACELAUCNH 101</h3>
+
+      <div class="tech__con">
+        <nav>
+          <span
+            [ngClass]="{ active: currentTech === objects[0] }"
+            (click)="setTech(objects[0])"
+            >1</span
+          >
+          <span
+            [ngClass]="{ active: currentTech === objects[1] }"
+            (click)="setTech(objects[1])"
+            >2</span
+          >
+          <span
+            [ngClass]="{ active: currentTech === objects[2] }"
+            (click)="setTech(objects[2])"
+            >3</span
+          >
+        </nav>
+        <div
+          class="tech__info"
+          [ngClass]="{ animation: animate }"
+          (animationend)="onAnimationEnd()"
+        >
+          <h4>THE TERMINOLOGY...</h4>
+          <h2 class="tech__type">{{ currentTech.techtype }}</h2>
+          <span class="tech__description">{{ currentTech.description }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="image__con">
+      <img [src]="currentTech.img" [ngClass]="{ animation: animate }" />
+    </div>
+  </div>
+</section>
