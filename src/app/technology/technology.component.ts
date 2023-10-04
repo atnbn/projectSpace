@@ -44,6 +44,8 @@ export class TechnologyComponent implements OnInit {
       ],
     },
   ];
+  imageUrls: any[] = this.objects.map((object) => object.images);
+
   responsiveImageUrl: string = '';
   constructor() {
     this.currentTech = this.objects[0];
@@ -52,6 +54,8 @@ export class TechnologyComponent implements OnInit {
   ngOnInit() {
     this.currentTech = this.objects[0];
     const screenWidth = window.innerWidth;
+    this.preloadImages(this.imageUrls);
+
     if (screenWidth <= 900) {
       this.responsiveImageUrl = this.currentTech.images[0].medium;
       console.log(this.responsiveImageUrl);
@@ -74,5 +78,11 @@ export class TechnologyComponent implements OnInit {
   }
   onAnimationEnd() {
     this.animate = false; // Reset animation trigger
+  }
+  preloadImages(imageUrls: string[]) {
+    for (const url of imageUrls) {
+      const img = new Image();
+      img.src = url;
+    }
   }
 }

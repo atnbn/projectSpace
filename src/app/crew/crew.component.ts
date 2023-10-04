@@ -39,6 +39,8 @@ export class CrewComponent implements OnInit {
       img: 'assets/crew/image-anousheh-ansari.png',
     },
   ];
+  imageUrls = this.crew.map((object) => object.img);
+
   ngOnInit(): void {
     this.selectedCrewMember = this.crew[0];
   }
@@ -48,5 +50,11 @@ export class CrewComponent implements OnInit {
   }
   onAnimationEnd() {
     this.animate = false; // Reset animation trigger
+  }
+  preloadImages(imageUrls: string[]) {
+    for (const url of imageUrls) {
+      const img = new Image();
+      img.src = url;
+    }
   }
 }

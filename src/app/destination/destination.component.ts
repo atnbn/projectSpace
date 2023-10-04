@@ -10,6 +10,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 export class DestinationComponent implements OnInit {
   selectedObject: CelestialObject | null = null;
   animate: boolean = true;
+
   objects: CelestialObject[] = [
     {
       name: 'MOON',
@@ -44,14 +45,15 @@ export class DestinationComponent implements OnInit {
       img: 'assets/destination/image-titan.png',
     },
   ];
+  imageUrls = this.objects.map((object) => object.img);
 
   constructor() {
     this.selectedObject = this.objects[0];
   }
 
   ngOnInit() {
-    // Set the default selected object to Moon
     this.selectedObject = this.objects[0];
+    this.preloadImages(this.imageUrls);
   }
 
   setObject(object: CelestialObject) {
@@ -63,5 +65,12 @@ export class DestinationComponent implements OnInit {
   }
   onAnimationEnd() {
     this.animate = false; // Reset animation trigger
+  }
+
+  preloadImages(imageUrls: string[]) {
+    for (const url of imageUrls) {
+      const img = new Image();
+      img.src = url;
+    }
   }
 }
