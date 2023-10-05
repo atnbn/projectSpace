@@ -73,7 +73,13 @@
       </div>
     </div>
     <div class="right__side">
-      <img [ngClass]="{ animation: animate }" [src]="selectedCrewMember.img" />
+      <img
+        [ngClass]="{ animation: animate }"
+        [src]="selectedCrewMember.img"
+        id="img"
+        (touchstart)="onTouchStart($event)"
+        (touchend)="onTouchEnd($event)"
+      />
       <hr />
     </div>
   </div>

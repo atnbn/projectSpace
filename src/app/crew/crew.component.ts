@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import { Crew } from './interface/crew';
+import { TouchSlideService } from '../services/touch-slide.service';
 
 @Component({
   selector: 'app-crew',
@@ -7,6 +14,11 @@ import { Crew } from './interface/crew';
   styleUrls: ['./crew.component.scss'],
 })
 export class CrewComponent implements OnInit {
+  // Slide Test
+  @ViewChild('yourSliderElement', { static: false })
+  yourSliderElement: ElementRef | null = null;
+
+  //
   selectedCrewMember: Crew | null = null;
   animate: boolean = true;
   crew: Crew[] = [
@@ -40,7 +52,33 @@ export class CrewComponent implements OnInit {
     },
   ];
   imageUrls = this.crew.map((object) => object.img);
+  constructor(
+    private renderer: Renderer2,
+    private touchSlideService: TouchSlideService
+  ) {}
 
+  onTouchStart(event: TouchEvent) {
+    this.touchSlideService.onTouchStart(event);
+  }
+  onTouchEnd(event: TouchEvent) {
+    this.touchSlideService.onTouchEnd(
+      event,
+      this.nextSlide.bind(this),
+      this.previousSlide.bind(this)
+    );
+  }
+
+  private nextSlide() {
+    this.touchSlideService.currentIndex =
+      (this.touchSlideService.currentIndex - 1 + this.crew.length) %
+      this.crew.length;
+    this.setCrewMember(this.crew[this.touchSlideService.currentIndex]);
+  }
+  private previousSlide() {
+    this.touchSlideService.currentIndex =
+      (this.touchSlideService.currentIndex + 1) % this.crew.length;
+    this.setCrewMember(this.crew[this.touchSlideService.currentIndex]);
+  }
   ngOnInit(): void {
     this.selectedCrewMember = this.crew[0];
   }

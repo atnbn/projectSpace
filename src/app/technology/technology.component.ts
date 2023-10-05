@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tech } from './interface/tech';
+import { TouchSlideService } from '../services/touch-slide.service';
 
 @Component({
   selector: 'app-technology',
@@ -47,10 +48,31 @@ export class TechnologyComponent implements OnInit {
   imageUrls: any[] = this.objects.map((object) => object.images);
 
   responsiveImageUrl: string = '';
-  constructor() {
+  constructor(private touchSlideService: TouchSlideService) {
     this.currentTech = this.objects[0];
   }
+  onTouchStart(event: TouchEvent) {
+    this.touchSlideService.onTouchStart(event);
+  }
+  onTouchEnd(event: TouchEvent) {
+    this.touchSlideService.onTouchEnd(
+      event,
+      this.nextSlide.bind(this),
+      this.previousSlide.bind(this)
+    );
+  }
 
+  private nextSlide() {
+    this.touchSlideService.currentIndex =
+      (this.touchSlideService.currentIndex - 1 + this.objects.length) %
+      this.objects.length;
+    this.setTech(this.objects[this.touchSlideService.currentIndex]);
+  }
+  private previousSlide() {
+    this.touchSlideService.currentIndex =
+      (this.touchSlideService.currentIndex + 1) % this.objects.length;
+    this.setTech(this.objects[this.touchSlideService.currentIndex]);
+  }
   ngOnInit() {
     this.currentTech = this.objects[0];
     const screenWidth = window.innerWidth;

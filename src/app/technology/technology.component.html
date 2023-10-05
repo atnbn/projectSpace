@@ -45,7 +45,12 @@
       <h3 class="title responsiv">
         <b style="color: gray">03 </b> SPACELAUCNH 101
       </h3>
-      <img [src]="responsiveImageUrl" [ngClass]="{ animation: animate }" />
+      <img
+        [src]="responsiveImageUrl"
+        [ngClass]="{ animation: animate }"
+        (touchstart)="onTouchStart($event)"
+        (touchend)="onTouchEnd($event)"
+      />
     </div>
   </div>
 </section>
