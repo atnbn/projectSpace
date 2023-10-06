@@ -1,0 +1,262 @@
+section {
+  margin: 0;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  overflow-x: none;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+
+.section__below {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.left__side {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+h3 {
+  font-size: 28px;
+  font-family: Barlow;
+  letter-spacing: 4.72px;
+  font-weight: 400;
+}
+
+.celestail__img {
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.animation {
+  animation: slide-in 0.5s ease forwards;
+}
+
+.right__side {
+  margin-top: 150px;
+  margin-left: 250px;
+  width: 444px;
+  height: 450px;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+  font-family: Barlow;
+  font-size: 16px;
+  height: 50px;
+  letter-spacing: 2.7px;
+}
+
+h1 {
+  font-size: 100px;
+  font-weight: 400;
+  font-family: Bellefair;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 0;
+}
+
+.distance__con {
+  display: flex;
+  gap: 90px;
+}
+.distance__con h4 {
+  font-size: 14px;
+  font-family: Barlow;
+  letter-spacing: 2.36px;
+  color: #d0d6f9;
+}
+.distance__con span {
+  font-size: 28px;
+  font-family: Bellefair;
+  line-height: auto;
+}
+
+.description {
+  font-size: 18px;
+  font-family: Barlow;
+  line-height: 32px;
+  color: #d0d6f9;
+}
+
+hr {
+  border: 1px solid #383b4b;
+  margin-top: 50px;
+}
+
+.link {
+  height: 93%;
+  display: flex;
+  align-items: center;
+  border-bottom: 4px solid transparent;
+}
+.link:hover {
+  cursor: pointer;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.5294117647);
+}
+
+.active {
+  border-bottom: 4px solid white;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@media (max-width: 1500px) {
+  .section__below {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+@media (max-width: 1260px) {
+  .right__side {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 1055px) {
+  .section__below {
+    width: 89%;
+  }
+}
+@media (max-width: 900px) {
+  .section__below {
+    flex-direction: column;
+    height: calc(100% - 115px);
+    margin-top: 115px;
+    gap: 25px;
+  }
+  .section__below h3 {
+    font-size: 20px;
+    font-family: Barlow;
+    margin: 0;
+  }
+  h1 {
+    margin: 0;
+    font-size: 80px;
+  }
+  .celestail__img {
+    margin: 0;
+    width: 300px;
+    height: 300px;
+  }
+  .left__side {
+    width: 100%;
+  }
+  .left__side img {
+    align-self: center;
+  }
+  nav {
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .right__side {
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  span {
+    display: block;
+    font-size: 16px;
+  }
+  .distance__con {
+    justify-content: center;
+    gap: 6em;
+  }
+  hr {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .section__below {
+    gap: 25px;
+    height: 100%;
+    margin-top: 35px !important;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+  }
+  .section__below img {
+    width: 170px;
+    height: 170px;
+  }
+  h1 {
+    font-size: 56px;
+  }
+  h3 {
+    text-align: center;
+    font-size: 56px;
+  }
+  nav {
+    font-size: 14px;
+    gap: 20px;
+  }
+  .distance__con {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+  }
+  .description {
+    font-size: 15px;
+    width: 350px;
+    line-height: 25px;
+  }
+  .right__side {
+    gap: 5px;
+  }
+  hr {
+    margin-top: 15px;
+    width: 90%;
+  }
+  h4 {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+@media (max-height: 700px) {
+  .section__below {
+    margin-top: 75px !important;
+    gap: 5px;
+  }
+  .left__side {
+    gap: 10px;
+  }
+  h4 {
+    margin: 4px;
+  }
+}/*# sourceMappingURL=destination.component.css.map */

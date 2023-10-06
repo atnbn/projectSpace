@@ -52,6 +52,10 @@ nav {
         letter-spacing: 2px;
         font-family: Bellefair;
         cursor: pointer;
+
+        &:hover {
+            border: 1px solid #ffff;
+        }
     }
 }
 .left {

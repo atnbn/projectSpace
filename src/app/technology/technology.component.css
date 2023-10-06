@@ -1,0 +1,276 @@
+section {
+  margin: 0;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  position: relative;
+  display: flex;
+  color: #fff;
+  overflow-x: none;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+
+.section__below {
+  margin-top: 150px;
+  margin-left: 150px;
+  display: flex;
+  width: 100%;
+  gap: 100px;
+}
+
+.title {
+  margin-top: 150px;
+  font-size: 28px;
+  letter-spacing: 4.72px;
+  font-family: Barlow;
+  font-weight: 400;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+nav span {
+  width: 80px;
+  height: 80px;
+  background: transparent;
+  border-radius: 100%;
+  border: 1px solid #979797;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-family: Bellefair;
+  cursor: pointer;
+}
+nav span:hover {
+  border: 1px solid white;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.con {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  margin-left: 150px;
+}
+
+h4 {
+  font-size: 16px;
+  letter-spacing: 2.7px;
+  color: #d0d6f9;
+  font-family: Barlow;
+  font-weight: 400;
+  margin: 0;
+}
+
+.tech__con {
+  gap: 50px;
+  display: flex;
+}
+
+.tech__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tech__type {
+  font-size: 56px;
+  color: white;
+  margin: 0;
+  font-family: Bellefair;
+  font-weight: 400;
+}
+
+.tech__description {
+  font-size: 18px;
+  line-height: 32px;
+  color: #d0d6f9;
+  width: 444px;
+  display: block;
+}
+
+.image__con {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+.image__con img {
+  width: 537px;
+  height: 527px;
+  margin-bottom: 155px;
+}
+
+.active {
+  background-color: white !important;
+  color: black;
+}
+
+.animation {
+  animation: 1s slide-in;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@media (max-width: 1320px) {
+  .section__below {
+    margin-left: 70px;
+    gap: 50px;
+  }
+  .image__con img {
+    width: 300px;
+    height: 300px;
+  }
+  .tech__con {
+    gap: 25px;
+  }
+  .tech__description {
+    width: 300px;
+  }
+}
+@media (max-width: 900px) {
+  .section__below {
+    flex-direction: column-reverse;
+    margin: 0;
+    justify-content: start;
+    margin-top: 150px;
+  }
+  .title {
+    margin-top: 0;
+  }
+  .image__con {
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    flex: 0;
+  }
+  .image__con h3 {
+    margin-left: 50px;
+    align-self: flex-start;
+    display: block !important;
+    font-size: 20px;
+  }
+  .image__con img {
+    margin: 0;
+    height: 310px;
+    width: 100%;
+  }
+  .tech__con {
+    flex-direction: column;
+  }
+  .tech__info {
+    text-align: center;
+    align-items: center;
+  }
+  .tech__info span {
+    width: 458px;
+  }
+  nav {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav span {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+  .title {
+    display: none;
+  }
+  .animation {
+    animation: 1s slide;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  .tech__type {
+    font-size: 40px;
+  }
+  .tech__description {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+@media (max-width: 500px) {
+  .section__below {
+    margin-top: 75px;
+    gap: 20px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  nav span {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  h4 {
+    font-size: 14px;
+  }
+  .tech__type {
+    font-size: 24px;
+  }
+  .responsiv {
+    margin: 0 !important;
+  }
+  .tech__description {
+    font-size: 15px;
+    width: 327px !important;
+  }
+  .tech__info {
+    gap: 15px;
+  }
+  .image__con {
+    gap: 25px;
+  }
+  .image__con img {
+    height: 170px;
+  }
+  .responsiv {
+    align-self: center !important;
+  }
+}
+.responsiv {
+  display: none;
+}/*# sourceMappingURL=technology.component.css.map */

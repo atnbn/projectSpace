@@ -1,0 +1,135 @@
+section {
+  margin: 0;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 0;
+}
+
+.text__con {
+  z-index: 0;
+  color: white;
+  width: 450px;
+}
+.text__con h2 {
+  font-family: Barlow;
+  font-weight: 400;
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 4.7px;
+}
+.text__con h1 {
+  font-size: 150px;
+  font-family: Bellefair;
+  font-weight: 400;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.text__con span {
+  font-size: 16px;
+  font-family: sans-serif;
+  color: #d0d6f9;
+  letter-spacing: 0.5px;
+  line-height: 2;
+}
+
+.section__below {
+  position: absolute;
+  left: 150px;
+  bottom: 150px;
+  width: calc(100vw - 150px);
+  justify-content: space-between;
+  display: flex;
+}
+
+.button__con {
+  margin-right: 150px;
+  align-items: center;
+  display: flex;
+}
+.button__con button {
+  width: 274px;
+  font-family: Bellefair;
+  font-size: 35px;
+  height: 274px;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+}
+.button__con button:hover {
+  transition: 0.35s ease-in-out;
+  box-shadow: 0px 0px 0px 75px rgba(102, 102, 102, 0.57);
+}
+.button__con button:not(:hover) {
+  transition: box-shadow 0.25s ease-in-out 0.25s; /* Delay the transition back to original box shadow */
+}
+.button__con button:after {
+  transition: 0.2y5s ease-out;
+}
+
+@media (max-width: 1100px) {
+  .button__con {
+    margin-right: 15px;
+  }
+  .section__below {
+    left: 15px;
+    width: calc(100vw - 15px);
+  }
+}
+@media (max-width: 900px) {
+  .section__below {
+    margin-top: 90px;
+    bottom: 0;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .text__con {
+    text-align: center;
+  }
+  .button__con {
+    margin-top: 100px;
+  }
+}
+@media (max-width: 600px) {
+  .section__below {
+    width: 90%;
+    margin-top: 40px;
+  }
+  .text__con {
+    width: 100%;
+  }
+  .text__con h1 {
+    font-size: 100px;
+    margin: 0;
+  }
+  .text__con span {
+    font-size: 15px;
+  }
+  .text__con h2 {
+    font-size: 20px;
+  }
+  .button__con {
+    margin: 0;
+    margin-top: 50px;
+  }
+  .button__con button {
+    width: 200px;
+    height: 200px;
+    font-size: 30px;
+  }
+}/*# sourceMappingURL=home.component.css.map */

@@ -1,0 +1,9 @@
+.absolute {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}/*# sourceMappingURL=app.component.css.map */
