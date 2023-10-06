@@ -212,6 +212,7 @@ hr {
     .section__below {
         flex-direction: column-reverse;
         justify-content: start;
+        margin-top: 100px;
     }
     .left__side {
         margin-top: 10px;
@@ -252,7 +253,7 @@ hr {
     }
     .absolute {
         position: absolute;
-        top: 100px;
+        top: 70px;
         left: 30px;
         gap: 10px;
     }
