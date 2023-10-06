@@ -64,13 +64,14 @@ export class TechnologyComponent implements OnInit {
 
   private nextSlide() {
     this.touchSlideService.currentIndex =
-      (this.touchSlideService.currentIndex + 1) % this.objects.length;
-    this.setTech(this.objects[this.touchSlideService.currentIndex]);
-  }
-  private previousSlide() {
-    this.touchSlideService.currentIndex =
       (this.touchSlideService.currentIndex - 1 + this.objects.length) %
       this.objects.length;
+    this.setTech(this.objects[this.touchSlideService.currentIndex]);
+  }
+
+  private previousSlide() {
+    this.touchSlideService.currentIndex =
+      (this.touchSlideService.currentIndex + 1) % this.objects.length;
     this.setTech(this.objects[this.touchSlideService.currentIndex]);
   }
   ngOnInit() {

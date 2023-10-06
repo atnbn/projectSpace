@@ -52,10 +52,7 @@ export class CrewComponent implements OnInit {
     },
   ];
   imageUrls = this.crew.map((object) => object.img);
-  constructor(
-    private renderer: Renderer2,
-    private touchSlideService: TouchSlideService
-  ) {}
+  constructor(private touchSlideService: TouchSlideService) {}
 
   onTouchStart(event: TouchEvent) {
     this.touchSlideService.onTouchStart(event);
@@ -73,13 +70,13 @@ export class CrewComponent implements OnInit {
   }
   private nextSlide() {
     this.touchSlideService.currentIndex =
-      (this.touchSlideService.currentIndex - 1 + this.crew.length) %
-      this.crew.length;
+      (this.touchSlideService.currentIndex + 1) % this.crew.length;
     this.setCrewMember(this.crew[this.touchSlideService.currentIndex]);
   }
   private previousSlide() {
     this.touchSlideService.currentIndex =
-      (this.touchSlideService.currentIndex + 1) % this.crew.length;
+      (this.touchSlideService.currentIndex - 1 + this.crew.length) %
+      this.crew.length;
     this.setCrewMember(this.crew[this.touchSlideService.currentIndex]);
   }
   ngOnInit(): void {
