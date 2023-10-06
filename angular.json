@@ -29,6 +29,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/projectSpace/",
               "budgets": [
                 {
                   "type": "initial",
