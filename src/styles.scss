@@ -29,3 +29,11 @@ body {
     font-family: Barlow;
     src: url("assets/fonts/BarlowCondensed-Regular.ttf");
 }
+
+.slider-image {
+    display: none; /* Initially hide the image */
+}
+
+.slider-image.loaded {
+    display: block; /* Show the image once it's loaded */
+}

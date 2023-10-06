@@ -79,7 +79,7 @@
         id="img"
         (touchstart)="onTouchStart($event)"
         (touchend)="onTouchEnd($event)"
-        loading="lazy"
+        (load)="onImageLoad($event)"
       />
       <hr />
     </div>

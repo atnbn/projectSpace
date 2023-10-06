@@ -67,7 +67,10 @@ export class CrewComponent implements OnInit {
       this.previousSlide.bind(this)
     );
   }
-
+  onImageLoad(event: Event) {
+    const img = event.target as HTMLImageElement;
+    img.classList.add('loaded');
+  }
   private nextSlide() {
     this.touchSlideService.currentIndex =
       (this.touchSlideService.currentIndex - 1 + this.crew.length) %
@@ -83,6 +86,7 @@ export class CrewComponent implements OnInit {
     this.selectedCrewMember = this.crew[0];
   }
   setCrewMember(member: Crew) {
+    if (this.selectedCrewMember === member) return;
     this.selectedCrewMember = member;
     this.animate = true;
   }

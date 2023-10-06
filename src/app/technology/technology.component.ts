@@ -80,7 +80,6 @@ export class TechnologyComponent implements OnInit {
 
     if (screenWidth <= 900) {
       this.responsiveImageUrl = this.currentTech.images[0].medium;
-      console.log(this.responsiveImageUrl);
     } else {
       this.responsiveImageUrl = this.currentTech.images[0].large;
     }
